@@ -9,6 +9,7 @@ class _HomePageState extends State<HomePage>{
       body: SafeArea(child: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
+            pinned: false,//ata newa hoi appBar ta thik rakhte
             expandedHeight: MediaQuery.of(context).size.height/2.5,
             flexibleSpace: FlexibleSpaceBar(
               title: Text("MR Mostakim",style: TextStyle(fontWeight: FontWeight.bold),),
@@ -23,7 +24,6 @@ class _HomePageState extends State<HomePage>{
               IconButton(onPressed: (){}, icon: Icon(Icons.search)),
               SizedBox(width: 15,),
             ],
-            
           ),
           SliverList(
             delegate: SliverChildBuilderDelegate((context, index) {
@@ -35,12 +35,13 @@ class _HomePageState extends State<HomePage>{
                   },
                   leading: Text("$index"),
                   title: Text("Motiur Rahman Mostakim"),
-                  textColor: Colors.pink,trailing: Text("Mostakim"),
-                  selectedColor: Colors.black26,
-                  subtitle: Text("MR Mostakim"),
+                  textColor: Colors.pink,trailing: Text("Mostakim",
+                  style: TextStyle(color: Colors.black),),
+                  selectedColor: Colors.black12,
+                  subtitle: Text("MR Mostakim",
+                  style: TextStyle(color: Colors.black),),
                 ),
               );
-              
             },
             childCount: 51
             ))
